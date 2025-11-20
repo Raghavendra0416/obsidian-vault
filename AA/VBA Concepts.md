@@ -1,0 +1,2 @@
+- Modules, Procedures, Sub Procedures, function, 
+- Msg Box, Input Box, Data Types, Constant, Operations, If else, nested if, Switch case, Loops(for, for each, Do While, Do Until, Nested Loop),Exit for, Exit Do, String, Date & Time, Array, Functions, Subroutines(Sub), Call, lookup,

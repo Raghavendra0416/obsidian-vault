@@ -1,0 +1,17 @@
+- Career Objective
+- Professional Summary
+- Technical Skills
+- Work Experience
+- Projects _(recommended)_
+- Achievements and Certifications
+- Educational Qualification
+- (Optional) Personal Strengths
+- (Optional) Tools / Environment
+- (Remove) Declaration
+- Mini Projects Section (Even Practice Projects Count)
+- Problem Solving / Impact Metrics
+- GitHub Portfolio Link
+- LinkedIn Profile (Updated & Keyword Optimized)
+- Client Interaction or Business Exposure
+- **Online Course Certifications** (from trusted platforms)
+- Process Improvement or Ownership Example
