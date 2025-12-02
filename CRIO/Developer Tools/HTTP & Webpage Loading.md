@@ -7,6 +7,8 @@ It standardizes how clients and servers communicate, enabling the whole web to i
 **How do we use HTTP?**  
 A browser or app sends an HTTP request (e.g., `GET /page`) with headers and optional body; the server replies with a status code, headers, and content.
 
+![[Pasted image 20251202200515.png]]
+
 ---
 #### How Does HTTP Request is made and what are the components?
 
@@ -226,3 +228,13 @@ What is a TLS handshake (HTTPS)?
 **Why it matters:**
 - **DNS** finds _where_ to connect.
 - **TLS** makes the connection **private** and **authentic** before any HTTP request is sent.
+
+|Feature|DOM|Developer Tools|
+|---|---|---|
+|Definition|Browser’s internal model of the page|Interface/UI to view & debug the DOM|
+|Created by|Browser|Browser tools (e.g., Chrome DevTools)|
+|Editable|Yes (via JavaScript)|Yes, but temporary|
+|Where it exists|In browser memory|In the DevTools panel|
+|Used by JS code?|✔ Yes|❌ No|
+|Reflects live changes?|✔ Always|✔ Shows the DOM live|
+|Permanent?|✔ DOM updates during runtime|❌ Edits disappear after refresh|

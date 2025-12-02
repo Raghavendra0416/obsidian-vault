@@ -46,7 +46,7 @@ A framework, in contrast, would typically provide all of these "batteries-includ
 
     - **Analogy:** A framework is like building a pre-fabricated home. You get a full blueprint, a foundation, and slots where you must put the kitchen and the bathroom. You just add your personal code (the furniture)
 
-#### Why Does It _Feel_ Like a Framework?
+##### Why Does It _Feel_ Like a Framework?
 People often call React a framework by mistake because:
 1. **The Ecosystem:** When you combine React with all the other libraries (like `react-router`, `Redux`, etc.), the _entire collection_ of tools starts to look and feel like a framework.
 2. **Frameworks on Top:** There are now popular **frameworks built _on top_ of React**, such as **Next.js** and **Gatsby**. These tools add the routing, server-side rendering, and other features _to_ React, turning it into a true framework experience.
