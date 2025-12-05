@@ -47,5 +47,5 @@ Math.random() * (max - min)  → scales it to the correct size.
 
 
 
-
+JavaScript is called as client side scripting language. why?
 
