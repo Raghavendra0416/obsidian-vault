@@ -14,6 +14,7 @@
 
 **Functions**
 - [ ] Functions (declaration, expression, arrow functions, default params)
+- [ ] Closures, Variable Shadowing
 
 #### Level 2: Working with Data (Core)
 
