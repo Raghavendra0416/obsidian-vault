@@ -169,7 +169,7 @@ Margin collapse means:
 **The Concept:** When two vertical margins touch (the bottom of Element A and the top of Element B), they don't add together (e.g., 20px + 30px = 50px). Instead, they **collapse** into a single margin equal to the largest one (30px).
 
 ---
-### What is CSS selector specificity and how does it work?
+### 5. What is CSS selector specificity and how does it work?
 Answer:
 **CSS Specificity** determines which CSS rule gets applied when multiple rules target the same element. It's a scoring system that browsers use to resolve conflicts between competing styles.
 
@@ -189,7 +189,7 @@ If two styles have the same specificity, the one that appears later in the CSS f
 When multiple styles with different specificity levels conflict, the style with the highest specificity will be applied.
 
 ---
-### What does `* { box-sizing: border-box; }` do?
+### 6. What does `* { box-sizing: border-box; }` do?
 Answer:
 `* { box-sizing: border-box; }` applies `border-box` sizing to all elements on the page.
 
@@ -200,7 +200,7 @@ By default, when you set a width like 200px, that's just the content width - pad
 With `border-box`, the width includes the padding and border, so if you set width to 200px, the element is exactly 200px total. This makes layouts much more predictable and easier to work with.
 
 ---
-### What are grids in CSS?
+### 7. What are grids in CSS?
 Answer:
 **CSS Grid** is a two-dimensional layout system that lets you create complex layouts using rows and columns.
 
@@ -220,7 +220,7 @@ To create a grid layout in CSS, we can use the CSS Grid Layout module. This modu
 
 ---
 
-### What is Flex Box?
+### 8. What is Flex Box?
 Answer:
 CSS Flexbox is a one-dimensional layout model designed to arrange items in a single direction—either as a row or a column.
 
@@ -247,7 +247,7 @@ The properties of flex box are:
 Flexbox is commonly used for navigation bars, buttons, or perfectly centering elements on a page.
 
 ---
-### What is the difference between absolute and relative length units in CSS? Provide examples.
+### 9. What is the difference between absolute and relative length units in CSS? Provide examples.
 Answer:
 **Absolute Units:**
 Absolute units are static values that does not change based on other settings or screen sizes. for example: if you define a width in absolute unit then the element will appear in same size in all phone, tablet and desktop.
@@ -284,7 +284,7 @@ If asked **"Which should I use for font sizes?"**
 the strongest answer is usually **`rem`**.rem units are mostly used in webpage, as this will help visually impaired users to visualize the font by increasing the font size.
 
 ---
-### What are the differences between CSS Grids and Flexbox?
+### 10. What are the differences between CSS Grids and Flexbox?
 Answer:
 The Core Difference of flex box and grids are:
 **Flexbox** is **One-Dimensional (1D)**. It arranges elements in a single axis - either a main axis or cross axis.
@@ -319,7 +319,7 @@ Flexbox is commonly used for navigation bars, buttons, or perfectly centering el
 Grids are commonly used for Page layouts, dashboards, image galleries.
 
 ---
-### What are the different CSS position property values?
+### 11. What are the different CSS position property values?
 Answer:
 There are **5 main values** for the `position` property:
 1. Static
@@ -374,7 +374,7 @@ Document Flow: Static, Relative, Sticky.
 Offset properties work on: Relative, Absolute, Fixed, Sticky.
 
 ---
-### What is Responsive Web Design(RWD)?
+### 12. What is Responsive Web Design(RWD)?
 Answer:
 **Responsive Web Design (RWD)** is an approach to web development where the layout and content **adapt** to different screen sizes, orientations, and resolutions.
 Instead of building separate websites for mobile and desktop, we build **one** codebase that looks good on everything from small screens to large screens.
@@ -401,7 +401,7 @@ Responsive CSS **will not work** on a mobile device unless you include this spec
 Responsive CSS **will not work** on a mobile device unless we include meta tag and name with viewport and content width to be device width in the `<head>` tag.
 
 ---
-### What is Bootstrap?
+### 13. What is Bootstrap?
 Answer:
 **Definition:**
 **Bootstrap** is a popular **open-source CSS framework** developed by Twitter. It is used to build **responsive, mobile-first websites** quickly.
@@ -424,7 +424,7 @@ These grid classes use **breakpoints** (sm, md, lg, xl) to automatically adapt t
 Overall, it helps developers build websites **faster**, ensures **design consistency**, and handles **cross-device responsiveness** automatically.
 
 ---
-### What are the differences between semantic and non-semantic HTML tags?
+### 14. What are the differences between semantic and non-semantic HTML tags?
 Answer:
 Semantic tags: Semantic tags clearly describe **what** kind of content they contain to both the browser and the developer.
 Examples:  
@@ -444,7 +444,7 @@ Non-semantic tags:
 - Require classes or IDs to give meaning
 
 ---
-### What are the differences between block elements, inline elements and inline-block elements?
+### 15. What are the differences between block elements, inline elements and inline-block elements?
 Answer:
 **1. Block Elements**
 - Always start on a **new line**.
@@ -495,4 +495,265 @@ Buttons, navigation links, cards, or items arranged in a row with fixed size.
 | Examples                   | `<div>`, `<p>`, `<h1>–<h6>` | `<span>`, `<a>`, `<strong>` | Often applied through CSS:  <br>`display: inline-block;` |
 
 ---
-	
+
+### 16. What are async and defer?
+Answer:
+
+`async` and `defer` are **attributes of the `<script>` tag** used to **control how JavaScript files are loaded and executed** in relation to HTML parsing.
+
+They help **improve page performance** and **avoid blocking the HTML rendering**.
+
+Async:
+When Browser encounters the script, the script will be downloaded in parallel with HTML parsing. Once the script starts executing then the HTML parsing will be stopped until script execution is complete. 
+
+Here the execution order is not guaranteed.
+This is best used for when scripts are independent.
+
+Defer:
+When the browser encounters the script, the script will be downloaded in parallel with HTML parsing. Once the script will be executed after the HTML parsing is complete.
+
+The order of execution is guaranteed.
+This is best used for scripts that depend on DOM. 
+
+----
+### 17. What is the difference between querySelector and QuerySelectorAll?
+Answer:
+
+Both are used to select elements.
+
+Query Selector:
+This will accepts any valid selector and will Returns the **first element** that matches the given CSS selector.
+If no element matches, it returns **`null`**.
+
+This will return single element.
+Mostly used in header, modal, form.
+
+Query Selector All:
+This will also accept any valid selector and will Return all the elements that matches the selector. i.e **Static Node list** (Collection).
+If no element matches, then will return empty node list.(not null).
+
+This will return multiple elements.
+Mostly used in list items, buttons, cards.
+
+
+- `querySelector()` is generally **faster** because the browser stops searching as soon as it finds the first match.
+- `querySelectorAll()` must check the entire DOM tree to find every possible match, which will take more time than querySelector.
+
+---
+### 18. What is setTimeout?
+Answer:
+
+`setTimeout` is a **Web API function** in JavaScript used to **execute a function once after a specified delay (in milliseconds)**.
+
+It does **not block** the execution of other code.
+
+`setTimeout` returns a unique **Timeout ID**. This is crucial for memory management. If a component unmounts (in React) or a user cancels an action, you should use `clearTimeout(timerId)` to prevent memory leaks or unexpected behavior.
+
+`setTimeout` is **asynchronous**
+
+Syntax:
+```JavaScript
+setTimeout(callback, delay, arg1, arg2, ...)
+```
+
+- **The Process:** When you call `setTimeout`, the browser starts a timer in the background. Once the timer expires, the callback function is pushed to the **Task Queue** (or Callback Queue).
+- **The Event Loop:** The callback only moves to the **Call Stack** (to actually execute) once the Call Stack is empty.
+
+###### Step wise explanation:
+How `setTimeout` works:
+1. JS executes synchronous code
+2. `setTimeout` is sent to **Web APIs**
+3. Timer starts
+4. After delay, callback goes to **callback queue**
+5. **Event loop** pushes it to call stack when stack is empty
+
+📌 This is why `setTimeout` is **asynchronous**
+
+###### 
+If the main thread is busy with a heavy calculation, the callback will wait in the queue even if the timer has finished.
+
+----
+
+### 19. What is async-await and how does it work?
+Answer:
+
+`async–await` is a JavaScript feature used to handle asynchronous operations in a clean and readable way.
+
+It is built on top of Promises and it allows us to write  asynchronous code like fetching data from an API that looks similar to synchronous, without blocking the main thread.
+
+**Key Points**
+- `async` is used before a function and **always returns a Promise**
+- `await` is used inside an async function to **wait for a Promise to resolve or reject**
+- It improves **readability**, **debugging**, and **error handling**
+
+What actually happens step-by-step (interview-friendly)
+1. When JavaScript encounters `await` and `await` encounters a Promise
+2. The async function is **paused**
+3. The call stack is **released**
+4. Main execution continues
+5. Promise resolves/rejects
+6. Remaining async code is placed in the **microtask queue**
+7. Event loop pushes it back to the call stack
+###### async–await vs Promises
+
+| async–await          | Promises         |
+| -------------------- | ---------------- |
+| More readable        | Less readable    |
+| try–catch for errors | .catch()         |
+| Easier debugging     | Harder debugging |
+
+---
+### 20. What is a promise and what is its type?
+Answer:
+
+What is a Promise?
+A **Promise** in an object in JavaScript.
+It is represents the eventual **Success or failure of an asynchronous operation** and its resulting value.
+
+There are 3 types of promises:
+1. Pending
+2. Fulfilled
+3. Rejected
+
+**Pending:** The initial state. The operation is still going on (neither finished nor failed).
+**Fulfilled (Resolved):** The operation completed successfully, and the promise now has a _value_.
+**Rejected:** The operation failed, and the promise now has a _reason_ (error).
+
+Once a Promise is **fulfilled or rejected**, it cannot change state again.
+
+Promises have two main parts
+**Producing (Creation):** 
+- This is where the **asynchronous operation is defined**.
+- It uses the **Promise constructor** to create Promise instance
+- It is responsible for calling `resolve()` when it succeeds or `reject()` when it fails. 
+- In this Promise will be having two callbacks:
+	- `resolve()` → success   
+    - `reject()` → failure
+
+**Consuming (Handling):** 
+It waits for the Promise to finish and It uses `.then()`, `.catch()`, or `async/await` to react to the outcome.
+
+Real Life Examples:
+- Ordering food at a restaurant
+- Online payment
+
+---
+
+### 21. What is the difference between Synchronous and Asynchronous functions?
+Answer:
+
+**Synchronous functions**:
+- Synchronous functions executes "One thing at a time." 
+- It execute **line by line**, and each operation **blocks** the next one until it completes.  
+- Sequential
+- Occupies stack
+- Slower for I/O
+- UI can freeze
+- Examples: Normal function calls
+
+**Asynchronous functions**: 
+- Asynchronous functions is "Multitasking." 
+- It start an operation and **do not block** the execution; Once the operation completes the operation will be placed in the **microtask queue**.
+- The results are handled later via callbacks, Promises, or `async–await`.
+- The program continues running other code.
+- Releases stack
+- Better for I/O
+- UI remains responsive
+- Examples: `setTimeout`, `fetch`, Promises
+
+- As JavaScript is **single-threaded** Asynchronous tasks are handled using:
+    - Web APIs
+    - Event Loop
+    - Callback / Microtask queues
+- This allows **non-blocking behavior**
+
+When to use which?
+- **Synchronous:** Simple, quick operations
+- **Asynchronous:** API calls, file operations, timers, DB access
+
+---
+### 22. What are the different ways of fetching data?
+Answer:
+
+Data can be fetched in JavaScript using multiple techniques such as Callbacks (AJAX), XMLHttpRequest, Fetch API, Promises, async–await, and third-party libraries like Axios.
+
+Old way:
+- XMLHttpRequest (XHR) -> Verbose and hard to maintain
+- AJAX (with callbacks) -> Can cause **callback hell**
+Modern way:
+- Fetch API -> Promise-based, Cleaner syntax, Needs manual error handling, Need to convert the response to JSON, Does not treat status codes(like 404) as error.
+- Fetch + async–await -> Clean and readable & Easy error handling.
+Third-party library:
+- Axios -> Built on Promises, Automatic JSON parsing, Better error handling
+- WebSockets / Server-Sent Events -> Used for **live updates**, Chat apps, stock prices, notifications
+
+Comparison table:
+
+| Method              | Type        | Difficulty | Usage          |
+| ------------------- | ----------- | ---------- | -------------- |
+| XMLHttpRequest      | Callback    | Hard       | Legacy         |
+| AJAX                | Callback    | Medium     | Old apps       |
+| Fetch API           | Promise     | Easy       | Modern apps    |
+| Fetch + async–await | Promise     | Very Easy  | Best practice  |
+| Axios               | Promise     | Very Easy  | Framework apps |
+| WebSocket           | Event-based | Advanced   | Real-time      |
+
+---
+### 23. Define Callback Hell in JavaScript?
+Answer:
+
+**Callback Hell** is a situation in JavaScript where **multiple asynchronous callbacks are nested inside each other**. 
+It is also called the **“Pyramid of Doom.”**
+
+**Why does Callback Hell occur?**
+- JavaScript uses **callbacks** for async operations
+- When tasks depend on previous async results
+- Excessive **nesting of callbacks**
+
+**Example of Callback Hell**
+
+```js
+getUser(id, function (user) {
+  getOrders(user.id, function (orders) {
+    getOrderDetails(orders[0], function (details) {
+      processPayment(details, function (payment) {
+        console.log(payment);
+      });
+    });
+  });
+});
+```
+
+**Problems caused by Callback Hell**
+- Hard to maintain
+- Difficult to **handle errors**
+- Hard to **debug and test**
+- Poor **code reusability**
+
+
+**How to avoid Callback Hell?**
+1. **Use Promises**
+
+```js
+getUser(id)
+  .then(user => getOrders(user.id))
+  .then(orders => getOrderDetails(orders[0]))
+  .then(details => processPayment(details))
+  .catch(err => console.error(err));
+```
+
+2. **Use async–await (best solution)**
+
+```js
+async function process() {
+  try {
+    const user = await getUser(id);
+    const orders = await getOrders(user.id);
+    const details = await getOrderDetails(orders[0]);
+    const payment = await processPayment(details);
+    console.log(payment);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
