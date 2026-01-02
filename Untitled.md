@@ -16,3 +16,7 @@ Need to add dim effect for 4th module
 
 
 https://qtrip-static-8otpbchs5-swaroop-raghavendras-projects.vercel.app/
+
+
+
+ While you touched on the popularity of REST APIs, you could enhance your answer by discussing specific reasons such as statelessness, scalability, and ease of integration.

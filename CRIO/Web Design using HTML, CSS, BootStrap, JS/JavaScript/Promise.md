@@ -1,4 +1,4 @@
-
+https://medium.com/@lydiahallie/javascript-visualized-promises-async-await-a3f1aad8a943
 What is a Promise?
 A **Promise** in JavaScript is an **object** that represents the eventual **completion or failure of an asynchronous operation** and its resulting value.
 

@@ -577,23 +577,32 @@ If the main thread is busy with a heavy calculation, the callback will wait in t
 ### 19. What is async-await and how does it work?
 Answer:
 
-`async–await` is a JavaScript feature used to handle asynchronous operations in a clean and readable way.
+async await are the keywords in JavaScript.
+Using async–await, we can write **asynchronous code in a synchronous-looking way**.
+Async–await is built on top of Promises.
 
-It is built on top of Promises and it allows us to write  asynchronous code like fetching data from an API that looks similar to synchronous, without blocking the main thread.
+An **`async` function** is declared using the `async` keyword and it **always returns a Promise**.
+**`await`** can be used **only inside an async function**.
+`await` **pauses the execution of the async function until the Promise is settled (resolved or rejected)**.
+`await` Works Only with Promises and cannot be used outside an async function
+If a **non-Promise value** is awaited, JavaScript wraps it in a resolved Promise automatically.
 
-**Key Points**
-- `async` is used before a function and **always returns a Promise**
-- `await` is used inside an async function to **wait for a Promise to resolve or reject**
-- It improves **readability**, **debugging**, and **error handling**
+Async–await improves code readability, debugging, and error handling compared to `.then()` / `.catch()`.
 
-What actually happens step-by-step (interview-friendly)
-1. When JavaScript encounters `await` and `await` encounters a Promise
-2. The async function is **paused**
-3. The call stack is **released**
-4. Main execution continues
-5. Promise resolves/rejects
-6. Remaining async code is placed in the **microtask queue**
-7. Event loop pushes it back to the call stack
+Errors in async–await are handled using **`try...catch`**, just like synchronous code.
+
+Step by step:
+When JavaScript encounters await, async function is paused.
+and the async function will be removed from the call stack. 
+and main execution will continue.
+Once the promise will resolve/reject the async function will be placed in microtask queue.
+The async function resumes execution when the call stack becomes free
+
+Examples:
+Fetching data from a server.
+Wait for authentication response before redirecting user.
+Wait for payment confirmation before placing the order.
+Wait until the file upload finishes, then show success message.
 ###### async–await vs Promises
 
 | async–await          | Promises         |
@@ -608,9 +617,9 @@ Answer:
 
 What is a Promise?
 A **Promise** in an object in JavaScript.
-It is represents the eventual **Success or failure of an asynchronous operation** and its resulting value.
+It is represents the **Success or failure of an asynchronous operation** and its resulting value.
 
-There are 3 types of promises:
+There are 3 states of promises:
 1. Pending
 2. Fulfilled
 3. Rejected
@@ -625,10 +634,10 @@ Promises have two main parts
 **Producing (Creation):** 
 - This is where the **asynchronous operation is defined**.
 - It uses the **Promise constructor** to create Promise instance
-- It is responsible for calling `resolve()` when it succeeds or `reject()` when it fails. 
 - In this Promise will be having two callbacks:
 	- `resolve()` → success   
     - `reject()` → failure
+- Promise is responsible for calling `resolve()` when it succeeds or `reject()` when it fails. 
 
 **Consuming (Handling):** 
 It waits for the Promise to finish and It uses `.then()`, `.catch()`, or `async/await` to react to the outcome.
@@ -644,21 +653,27 @@ Answer:
 
 **Synchronous functions**:
 - Synchronous functions executes "One thing at a time." 
-- It execute **line by line**, and each operation **blocks** the next one until it completes.  
-- Sequential
-- Occupies stack
-- Slower for I/O
+- It execute **line by line**.
+- Follow Sequential execution.
+- Each operation **blocks** the next one until it completes.  
+- Occupy the call stack until completion
+- Slower for I/O operations
 - UI can freeze
+- Used for Simple, quick operations
 - Examples: Normal function calls
 
 **Asynchronous functions**: 
 - Asynchronous functions is "Multitasking." 
-- It start an operation and **do not block** the execution; Once the operation completes the operation will be placed in the **microtask queue**.
-- The results are handled later via callbacks, Promises, or `async–await`.
-- The program continues running other code.
-- Releases stack
-- Better for I/O
+- Execute tasks **without blocking** the main execution
+- Start an operation and **continue executing other code**
+- Once the operation completes:
+	- **Promises / `async-await` → Microtask queue**
+	- **Timers / callbacks → Callback (macrotask) queue**
+- Results are handled using **callbacks, Promises, or `async-await`**
+- Call stack is released
+- Better for I/O operations
 - UI remains responsive
+- Used for API calls, file operations,
 - Examples: `setTimeout`, `fetch`, Promises
 
 - As JavaScript is **single-threaded** Asynchronous tasks are handled using:
@@ -757,3 +772,204 @@ async function process() {
   }
 }
 ```
+
+---
+
+### 24. What is asynchronous JavaScript?
+Answer:
+
+- Asynchronous is "Multitasking." 
+- Does not block the execution of main thread
+- Once the operation completes the operation will be placed in the **microtask queue**.
+- The results are handled later via callbacks, Promises, or `async–await`.
+- Releases stack
+- Better for I/O
+
+- JavaScript is **single-threaded**, So asynchronous is needed in javascript.
+- Async behavior keeps applications **responsive**
+Example:
+- **Without Asynchronous JS:** If you requested data from a server and it took 5 seconds, your entire website would **freeze** for 5 seconds. The user couldn't click buttons, scroll, or type.
+- **With Asynchronous JS:** The browser sends the request in the background, lets the user keep interacting with the site, and updates the data only when it arrives.
+
+Asynchronous tasks are handled using:
+    - Web APIs
+    - Event Loop
+    - Callback / Microtask queues
+- Results are processed **later**, when ready
+
+**Common async mechanisms**
+- **Callbacks** -> Passing a function into another function. _Problem:_ Led to "Callback Hell" (messy nesting)
+- **Promises** -> Objects representing a future value.
+- **async–await** -> Syntactic sugar over Promises. Makes async code look like sync code.
+- `setTimeout`, `setInterval`
+- `fetch`, `axios`
+---
+### 25. What is async API?
+Answer:
+
+An **Async API** (Asynchronous API) is an architectural style where the client (the requester) sends a request to the server and **does not wait** for the final result immediately.
+
+Instead of blocking the client until the job is done, the server usually returns a quick "Acknowledgement" (like "I received your request"), and processes the heavy work in the background. The final result is delivered later.
+
+An Async API does not block the main thread while performing an operation.
+Instead of returning the result immediately, it **returns later** using **callbacks, Promises, or async–await**.
+
+**Why Async APIs are needed**
+- JavaScript is **single-threaded**
+- Network, file, or database operations take time
+- Blocking APIs would **freeze the UI**
+- Async APIs keep applications **responsive**
+
+**How an Async API works (simple flow)**
+1. Request is sent to the API
+2. JavaScript continues executing other code
+3. API processes the request in background    
+4. Response is returned via:
+    - Callback
+    - Promise
+    - `async–await`
+
+**Common Async APIs in JavaScript**
+- `fetch()` – HTTP requests
+- `setTimeout()` / `setInterval()` – Timers
+- `addEventListener()` – Events
+- Database APIs
+- File system APIs (Node.js)
+
+---
+### 26. What is fetch API in JavaScript? How does it handle JSON responses?
+Answer:
+
+The **Fetch API** is a **modern, built-in JavaScript API** used to **make HTTP requests** (GET, POST, PUT, DELETE, etc.) to servers and fetch resources such as **JSON, text, or files**.
+It is **Promise-based** and provides a **cleaner and more flexible alternative** to `XMLHttpRequest`
+
+Key features:
+- Returns a **Promise**
+- Works well with **async–await**
+- Non-blocking (asynchronous)
+- Supports HTTP methods & headers
+
+Fetch does NOT automatically parse the JSON body.
+When you call `fetch()`, it returns a generic "Response Object" containing headers and status. but the body of the response is a raw data (**ReadableStream**).
+
+Fetch only rejects on **network failure**.
+HTTP errors like 404 or 500, the Promise still resolves, so we have to manually check if `response.ok` is true.
+
+How Fetch works:
+- `fetch()` sends the request and returns a **Promise**
+- The Promise resolves to a **Response object**
+- `response.json()`:
+    - Reads the response body
+    - Parses JSON into a **JavaScript object**
+    - Returns another Promise
+- The parsed JSON is then used in `.then()` or `await`
+
+----
+### 27. What is an API and different rest methods we use?
+Answer:
+
+###### API
+**API** stands for **Application Programming Interface**
+An API is a **set of rules and protocols** that allows **different software applications to communicate** with each other.
+
+It Provides bridge between the software applications.
+In web development, an API enables a **client (browser/mobile app)** to interact with a **server** to request or send data.
+
+**Why APIs are used**
+- Data exchange between systems
+- Backend–frontend communication
+- Integration with third-party services
+- Platform independence
+
+##### REST
+REST is Representational State Transfer.
+REST is used for building web APIs using HTTP methods.
+
+Common REST methods are:
+- **GET** → Read data (no change on server)
+- **POST** → Send data to create a resource
+- **PUT** → Replace existing resource
+- **PATCH** → Modify part of a resource
+- **DELETE** → Remove a resource
+
+GET (Read)
+- **Purpose:** Used to **retrieve** data from the server.
+- Calling it multiple times doesn't change anything on the server
+- **Example:** `GET /users` (Get a list of all users).
+
+POST (Create)
+- **Purpose:** Used to **send** data to the server to create a _new_ resource.
+- If you send the request twice, you might create two duplicate records.
+- **Example:** `POST /users` (Create a new user).
+
+PUT (Update/Replace)
+- **Purpose:** Used to update an existing resource by **replacing the entire thing**.
+- If you only send one field, the other fields might get erased or set to null because PUT expects a full replacement.
+- PUT is idempotent
+- **Example:** `PUT /users/1` (Replace User 1's entire profile with this new data).
+
+PATCH (Partial Update)
+- **Purpose:** Used to update **only specific fields** of an existing resource.
+- Safer than PUT for small changes (like just changing a password).
+- **Example:** `PATCH /users/1` (Update only User 1's email address).
+
+DELETE (Delete)
+- **Purpose:** Used to **remove** a resource from the server.
+- **Example:** `DELETE /users/1` (Delete User 1).
+
+---
+### 28. Can you explain the difference between a REST and SOAP API?
+Answer:
+
+**REST (Representational State Transfer):** It is an **architectural style**. It is lightweight, flexible, and easy to use. and this uses standard HTTP methods.
+
+**SOAP (Simple Object Access Protocol):** It is a **protocol**. It is strict, heavy, and comes with a lot of built-in rules and security standards. and this uses XML for structured message exchange.
+These rules include standards for security (WS-Security), transactions, and messaging patterns.
+
+REST:
+It typically uses **JSON** for data, which is easy to read and parse. It leverages standard HTTP methods like GET and POST.
+
+REST is stateless and can be cached, which contributes to its performance.
+
+When to use REST
+- Web & mobile applications
+- Microservices
+- Public APIs
+- Performance-critical systems
+
+SOAP:
+SOAP relies on **XML**, which makes the payload much larger and heavier. 
+SOAP is still used in enterprise sectors like banking because it has built-in standards for high security. 
+
+When to use SOAP
+- Enterprise systems
+- Banking & financial services
+- Transaction-heavy systems
+- When strict contracts are required
+---
+### 29. What are REST APIs and why are they so popular?
+Answer:
+
+REST stands for Representational State Transfer.
+It is an **architectural style**.
+It is lightweight, flexible, and easy to use.
+REST uses HTTP methods for building web APIs.
+REST uses **JSON** for data, which is easy to read and parse.
+
+REST APIs allow clients and servers to communicate over **HTTP** methods.
+In REST API the operations are performed using standard **HTTP methods** like GET, POST, PUT, PATCH, and DELETE.
+
+Common REST methods are:
+- **GET** → Read data (no change on server)
+- **POST** → Send data to create a resource
+- **PUT** → Replace existing resource
+- **PATCH** → Modify part of a resource
+- **DELETE** → Remove a resource
+
+We Use REST in
+- Web & mobile applications
+- Microservices
+- Public APIs
+- Performance-critical systems
+
+REST is preferred over SOAP for modern applications due to its simplicity, performance, and flexibility.

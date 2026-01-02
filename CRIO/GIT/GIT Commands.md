@@ -3,7 +3,6 @@ All Git related commands start with the `git` keyword.
 | Commands                                                            | Description                                                                                                                                                                                                                                                                                               |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | git config --global user.name "Raghavendra0416"                     | To Set name                                                                                                                                                                                                                                                                                               |
-|                                                                     |                                                                                                                                                                                                                                                                                                           |
 | git add File/Folder name                                            | Will add file name to staged                                                                                                                                                                                                                                                                              |
 | git commit -m "Message-changes made"                                | This will commit file or folder to the local. <br>-m: means message we need to add - that what changes we made.                                                                                                                                                                                           |
 | git status                                                          | Will gets you the current _status_ of the Git repository.                                                                                                                                                                                                                                                 |
@@ -12,6 +11,7 @@ All Git related commands start with the `git` keyword.
 | git branch crazy-experiment {git link where it needs to be created} | Creates branch crazy-experiment                                                                                                                                                                                                                                                                           |
 | git restore --staged < filename >                                   | Will restore the staged file. <br>if . is used instead of filename, all the staged files will be restored.                                                                                                                                                                                                |
 
+---
 
 All Commands need for branching:
 
@@ -26,10 +26,8 @@ All Commands need for branching:
 | git branch -D Branch_name      | Will delete branch from local                                                                          |
 | git push origin -d Branch_name | Will delete branch from github                                                                         |
 
-
-
-
-While Merge Conflict:
+---
+#### While Merge Conflict:
 
 | **Scenario**                         | **Action**                                                            |
 | ------------------------------------ | --------------------------------------------------------------------- |
@@ -44,7 +42,7 @@ If you see a change from a teammate and you don't understand _why_ they made it 
 
 ---
 
-Unix Commands used in GIT:
+#### Unix Commands used in GIT:
 
 | Commands | Description                        |
 | -------- | ---------------------------------- |
@@ -55,4 +53,22 @@ Unix Commands used in GIT:
 | touch    | to create a file                   |
 | nano     | to edit or update the file content |
 
+---
+#### Viewing Detailed Changes:
+
+Use `q` to quit from the Pager. The Pager will be opened when git log is used.
+
+|**Command**|**What it shows**|
+|---|---|
+|`git log -p`|Shows the full "patch" (diff) of every commit in the history.|
+|`git log --stat`|Shows which files were changed and how many lines were added/deleted.|
+|`git log -n 3`|Limits the output to only the last 3 commits (replace `3` with any number).|
+|`git show <hash>`|Shows the full details and code changes for one specific commit.|
+
+---
+#### Other Commands:
+
+| Commands                                         | Description/Where to use                                                                                                                                                                                                            |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git pull origin main --allow-unrelated-histories | Git refuses to merge two repositories that do not share a **common ancestor**(History or files). By using this command we tell -><br>I know these two repositories don't have a shared past, but I want you to combine them anyway. |
 
