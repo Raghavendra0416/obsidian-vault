@@ -140,3 +140,52 @@ button.addEventListener('click', function() { console.log(this); });
 ```javascript
 element.onclick = handler; // Only one handler allowed, can be overwritten
 ```
+----
+
+What are Event Listeners?
+Ans:
+An **event listener** is a function in JavaScript that waits for a specific event to occur on an HTML element and executes code when that event happens.
+
+**Common Events**: click, dblclick, mouseenter, mouseleave, keydown, keyup, submit, focus, blur, change, load, scroll, resize.
+
+`e.target` is used to identify the clicked child
+
+Syntax:
+```JavaScript
+element.addEventListener(event, callbackFunction, options);
+```
+we use it when:
+To react to user actions (click, input, hover, submit), 
+To respond to browser events,
+
+supports multiple handlers for the same event
+
+Common events (examples)
+- Mouse: `click`, `dblclick`, `mouseenter`, `mouseleave`
+- Keyboard: `keydown`, `keyup`
+- Form: `submit`, `change`, `input`, `focus`, `blur`
+- Window/document: `load`, `DOMContentLoaded`, `scroll`, `resize`
+
+Event object (important points)
+The callback receives an event object `e`:
+- `e.type` → event name (`"click"`)
+- `e.target` → element that triggered the event
+- `e.currentTarget` → element the listener is attached to
+- `e.preventDefault()` → stop default behavior (like form submit reload)
+- `e.stopPropagation()` → stop bubbling
+
+Event propagation: capturing + bubbling
+Events travel in phases:
+1. **Capturing phase** (top → down)
+2. **Target phase**
+3. **Bubbling phase** (bottom → up)
+
+**Event Object**: The callback receives an event object containing information about what happened - the target element, mouse coordinates, key pressed, and methods like `preventDefault()` and `stopPropagation()`.
+
+**Event Bubbling and Capturing**: Events propagate through the DOM in two phases. Capturing phase goes from root to target, bubbling phase goes from target back to root. By default, listeners trigger during bubbling. You can specify capturing with the third parameter: `addEventListener('click', handler, true)`.
+
+**Event Delegation**: Instead of attaching listeners to many child elements, attach one to a parent and use `event.target` to determine which child triggered it. This is more efficient and handles dynamically added elements.
+
+**Removing Listeners**: Use `removeEventListener()` with the same function reference to prevent memory leaks. This requires named functions rather than anonymous ones.
+
+Using `addEventListener` is preferred because it allows multiple handlers on the same event, separates HTML from JavaScript, and provides more control through the options parameter. The `onclick` property only allows one handler and can be accidentally overwritten.
