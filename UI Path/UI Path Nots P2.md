@@ -1,0 +1,2 @@
+- Whenever an automation completed, it is called Job and you check the completion in the job(orchestrator).
+- When the bot run the bot run for each transaction in the Queue. 
