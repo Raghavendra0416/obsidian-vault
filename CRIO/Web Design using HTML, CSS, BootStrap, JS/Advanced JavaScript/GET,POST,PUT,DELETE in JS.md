@@ -1,3 +1,4 @@
+[Fetch Get, Post, Put, Del](https://jsonplaceholder.typicode.com/guide/)
 ### GET:
 - We use fetch to get the data from the backend.
 
