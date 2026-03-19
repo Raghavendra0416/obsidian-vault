@@ -1,26 +1,7 @@
-A **Promise** is an object in JavaScript that represents the **eventual completion or failure** of an asynchronous operation.
+Hi, I am Raghavendra. I am currently working in TCS as a Monitoring and Support Engineer for Automation Anywhere, and I have 3 years of experience in RPA support. In my current role, I worked on Credit Bill Generator and Fetching Invoices, where I downloaded invoice data from SAP, populated it, ran macros, downloaded invoices from the portal, and sent them to stakeholders by mail. I also handled the monthly success ratio of bots, monthly machine utilization, and resolved issues during failures.
 
-Promises help us avoid "callback hell" and make asynchronous code more readable with `.then()` and `.catch()` or with `async/await`.
+Over time, I started developing more interest in frontend development because I wanted to move from support work to building user-facing applications. I enjoy creating screens that users can see and interact with.
 
-A Promise can be in **three states**:
-- **Pending** – initial state, operation not finished
-- **Fulfilled** – operation completed successfully
-- **Rejected** – operation failed with an error
+I have learned HTML, CSS, JavaScript, React, Bootstrap, and Tailwind. While learning, I worked on a few projects like XBoard, which is a simple news feed page, Qtrip, a trip booking webpage, and Qkart, a product shopping webpage where users can browse products and purchase them.
 
-JavaScript provides multiple promise APIs to handle **multiple promises together**:
-- `Promise.all()`
-- **`Promise.allSettled()`**
-- `Promise.race()`
-- `Promise.any()`
-
-What is `Promise.allSettled()`?
-`Promise.allSettled()` waits for all promises to complete, regardless of whether they succeed or fail.
-
-`Promise.allSettled()` will never rejects for a promise and will return array as results. 
-
-The Return values are array of objects, where each object has:
-- **`status`** — Either `"fulfilled"` or `"rejected"`
-- **`value`** — The fulfilled value (if status is fulfilled)
-- **`reason`** — The rejection reason (if status is rejected)
-
-Real scenarios where we use `Promise.allSettled()` is when calling multiple API's and logging or monitoring async operations and also in batch operations where failure of one task should not cancel others.
+I believe my experience in support, issue handling, and problem solving, along with my frontend skills, will help me contribute well as a Frontend Developer.

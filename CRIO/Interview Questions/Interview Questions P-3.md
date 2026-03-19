@@ -256,7 +256,7 @@ Debouncing vs Throttling
 ---
 ### 43. Explain the concept of ‘Lifting State Up’ in React.
 Ans:
-**Lifting State Up** means moving state from a child component to a **common parent component** so that multiple child components can share and synchronize that state.
+**Lifting State Up** means moving state from a child component to a **parent component** so that multiple child components can share and synchronize that state.
 
 Why Do We Need It and how do we do it?
 React has **one-way data flow** (data flows from parent to child via props).When two sibling components need to share data, they can't directly communicate with each other. The solution is to lift the state to their parent, which can then pass it down to both children.
@@ -272,3 +272,23 @@ Real World example:
 - Temperature Converter
 - Shopping Cart
 - Form with multiple inputs
+
+
+### 44. How many ways to create an object in JavaScript?
+Answer:
+There are **6 main ways:**
+1. Object Literal
+2. Using `new Object()`
+3. Constructor Function
+4. ES6 Class (We use Class)
+5. `Object.create()`
+6. Factory Function
+7. `Object.assign()` and Spread Operator -> Used for cloning + merging & Not primary creation method, but still valid
+
+In JavaScript, objects can be created in multiple ways, but the most common ones are object literal, using the Object constructor, constructor functions, ES6 classes, `Object.create()`, and factory functions.
+
+The simplest and most widely used method is the object literal, where we directly define key-value pairs inside curly braces. Another way is using the built-in Object constructor with the `new` keyword, although this is rarely used in modern JavaScript.
+
+Before ES6, constructor functions were commonly used to create multiple objects with similar properties, where the `new` keyword helps in creating a new instance and binding `this`. ES6 introduced classes, which are a cleaner and more readable way to achieve the same functionality as constructor functions and are now preferred in modern development.
+
+JavaScript also provides Object.create(), which allows us to create an object by explicitly setting its prototype, giving more control over inheritance. In addition, factory functions can be used to create and return objects without using `new` or `this`, making them simpler and avoiding common mistakes.
