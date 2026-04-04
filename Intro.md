@@ -4,4 +4,4 @@ Over time, I started developing more interest in frontend development because I 
 
 I have learned HTML, CSS, JavaScript, React, Bootstrap, and Tailwind. While learning, I worked on a few projects like XBoard, which is a simple news feed page, Qtrip, a trip booking webpage, and Qkart, a product shopping webpage where users can browse products and purchase them.
 
-I believe my experience in support, issue handling, and problem solving, along with my frontend skills, will help me contribute well as a Frontend Developer.
+I believe my experience in support, issue handling, and problem solving, along with my frontend skills, will help  me contribute well as a Frontend Developer.

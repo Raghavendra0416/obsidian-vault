@@ -169,7 +169,7 @@ Margin collapse means:
 **The Concept:** When two vertical margins touch (the bottom of Element A and the top of Element B), they don't add together (e.g., 20px + 30px = 50px). Instead, they **collapse** into a single margin equal to the largest one (30px).
 
 ---
-### 5. What is CSS selector specificity and how does it work?
+### 7. What is CSS selector specificity and how does it work?
 Answer:
 **CSS Specificity** determines which CSS rule gets applied when multiple rules target the same element. It's a scoring system that browsers use to resolve conflicts between competing styles.
 
@@ -189,7 +189,7 @@ If two styles have the same specificity, the one that appears later in the CSS f
 When multiple styles with different specificity levels conflict, the style with the highest specificity will be applied.
 
 ---
-### 6. What does `* { box-sizing: border-box; }` do?
+### 8. What does `* { box-sizing: border-box; }` do?
 Answer:
 `* { box-sizing: border-box; }` applies `border-box` sizing to all elements on the page.
 
@@ -200,7 +200,7 @@ By default, when you set a width like 200px, that's just the content width - pad
 With `border-box`, the width includes the padding and border, so if you set width to 200px, the element is exactly 200px total. This makes layouts much more predictable and easier to work with.
 
 ---
-### 7. What are grids in CSS?
+### 9. What are grids in CSS?
 Answer:
 **CSS Grid** is a two-dimensional layout system that lets you create complex layouts using rows and columns.
 
@@ -220,7 +220,7 @@ To create a grid layout in CSS, we can use the CSS Grid Layout module. This modu
 
 ---
 
-### 8. What is Flex Box?
+### 10. What is Flex Box?
 Answer:
 CSS Flexbox is a one-dimensional layout model designed to arrange items in a single direction—either as a row or a column.
 
@@ -247,7 +247,7 @@ The properties of flex box are:
 Flexbox is commonly used for navigation bars, buttons, or perfectly centering elements on a page.
 
 ---
-### 9. What is the difference between absolute and relative length units in CSS? Provide examples.
+### 11. What is the difference between absolute and relative length units in CSS? Provide examples.
 Answer:
 **Absolute Units:**
 Absolute units are static values that does not change based on other settings or screen sizes. for example: if you define a width in absolute unit then the element will appear in same size in all phone, tablet and desktop.
@@ -284,7 +284,7 @@ If asked **"Which should I use for font sizes?"**
 the strongest answer is usually **`rem`**.rem units are mostly used in webpage, as this will help visually impaired users to visualize the font by increasing the font size.
 
 ---
-### 10. What are the differences between CSS Grids and Flexbox?
+### 12. What are the differences between CSS Grids and Flexbox?
 Answer:
 The Core Difference of flex box and grids are:
 **Flexbox** is **One-Dimensional (1D)**. It arranges elements in a single axis - either a main axis or cross axis.
@@ -319,7 +319,7 @@ Flexbox is commonly used for navigation bars, buttons, or perfectly centering el
 Grids are commonly used for Page layouts, dashboards, image galleries.
 
 ---
-### 11. What are the different CSS position property values?
+### 13. What are the different CSS position property values?
 Answer:
 There are **5 main values** for the `position` property:
 1. Static
@@ -374,7 +374,7 @@ Document Flow: Static, Relative, Sticky.
 Offset properties work on: Relative, Absolute, Fixed, Sticky.
 
 ---
-### 12. What is Responsive Web Design(RWD)?
+### 14. What is Responsive Web Design(RWD)?
 Answer:
 **Responsive Web Design (RWD)** is an approach to web development where the layout and content **adapt** to different screen sizes, orientations, and resolutions.
 Instead of building separate websites for mobile and desktop, we build **one** codebase that looks good on everything from small screens to large screens.
@@ -401,7 +401,7 @@ Responsive CSS **will not work** on a mobile device unless you include this spec
 Responsive CSS **will not work** on a mobile device unless we include meta tag and name with viewport and content width to be device width in the `<head>` tag.
 
 ---
-### 13. What is Bootstrap?
+### 15. What is Bootstrap?
 Answer:
 **Definition:**
 **Bootstrap** is a popular **open-source CSS framework** developed by Twitter. It is used to build **responsive, mobile-first websites** quickly.
@@ -424,7 +424,7 @@ These grid classes use **breakpoints** (sm, md, lg, xl) to automatically adapt t
 Overall, it helps developers build websites **faster**, ensures **design consistency**, and handles **cross-device responsiveness** automatically.
 
 ---
-### 14. What are the differences between semantic and non-semantic HTML tags?
+### 16. What are the differences between semantic and non-semantic HTML tags?
 Answer:
 Semantic tags: Semantic tags clearly describe **what** kind of content they contain to both the browser and the developer.
 Examples:  
@@ -444,7 +444,7 @@ Non-semantic tags:
 - Require classes or IDs to give meaning
 
 ---
-### 15. What are the differences between block elements, inline elements and inline-block elements?
+### 17. What are the differences between block elements, inline elements and inline-block elements?
 Answer:
 **1. Block Elements**
 - Always start on a **new line**.
@@ -496,7 +496,7 @@ Buttons, navigation links, cards, or items arranged in a row with fixed size.
 
 ---
 
-### 16. What are async and defer?
+### 18. What are async and defer?
 Answer:
 
 `async` and `defer` are **attributes of the `<script>` tag** used to **control how JavaScript files are loaded and executed** in relation to HTML parsing.
@@ -516,7 +516,7 @@ The order of execution is guaranteed.
 This is best used for scripts that depend on DOM. 
 
 ----
-### 17. What is the difference between querySelector and QuerySelectorAll?
+### 19. What is the difference between querySelector and QuerySelectorAll?
 Answer:
 
 Both are used to select elements.
@@ -540,7 +540,7 @@ Mostly used in list items, buttons, cards.
 - `querySelectorAll()` must check the entire DOM tree to find every possible match, which will take more time than querySelector.
 
 ---
-### 18. What is setTimeout?
+### 20. What is setTimeout?
 Answer:
 
 `setTimeout` is a **Web API function** in JavaScript used to **execute a function once after a specified delay (in milliseconds)**.
@@ -574,7 +574,7 @@ If the main thread is busy with a heavy calculation, the callback will wait in t
 
 ----
 
-### 19. What is async-await and how does it work?
+### 21. What is async-await and how does it work?
 Answer:
 
 async await are the keywords in JavaScript.
@@ -612,7 +612,7 @@ Wait until the file upload finishes, then show success message.
 | Easier debugging     | Harder debugging |
 
 ---
-### 20. What is a promise and what is its type?
+### 22. What is a promise and what is its type?
 Answer:
 
 What is a Promise?
@@ -648,7 +648,7 @@ Real Life Examples:
 
 ---
 
-### 21. What is the difference between Synchronous and Asynchronous functions?
+### 23. What is the difference between Synchronous and Asynchronous functions?
 Answer:
 
 **Synchronous functions**:
@@ -687,7 +687,7 @@ When to use which?
 - **Asynchronous:** API calls, file operations, timers, DB access
 
 ---
-### 22. What are the different ways of fetching data?
+### 24. What are the different ways of fetching data?
 Answer:
 
 Data can be fetched in JavaScript using multiple techniques such as Callbacks (AJAX), XMLHttpRequest, Fetch API, Promises, async–await, and third-party libraries like Axios.
@@ -714,7 +714,7 @@ Comparison table:
 | WebSocket           | Event-based | Advanced   | Real-time      |
 
 ---
-### 23. Define Callback Hell in JavaScript?
+### 25. Define Callback Hell in JavaScript?
 Answer:
 
 **Callback Hell** is a situation in JavaScript where **multiple asynchronous callbacks are nested inside each other**. 
@@ -775,7 +775,7 @@ async function process() {
 
 ---
 
-### 24. What is asynchronous JavaScript?
+### 26. What is asynchronous JavaScript?
 Answer:
 
 - Asynchronous is "Multitasking." 
@@ -804,7 +804,7 @@ Asynchronous tasks are handled using:
 - `setTimeout`, `setInterval`
 - `fetch`, `axios`
 ---
-### 25. What is async API?
+### 27. What is async API?
 Answer:
 
 An **Async API** (Asynchronous API) is an architectural style where the client (the requester) sends a request to the server and **does not wait** for the final result immediately.
@@ -837,7 +837,7 @@ Instead of returning the result immediately, it **returns later** using **callba
 - File system APIs (Node.js)
 
 ---
-### 26. What is fetch API in JavaScript? How does it handle JSON responses?
+### 28. What is fetch API in JavaScript? How does it handle JSON responses?
 Answer:
 
 The **Fetch API** is a **modern, built-in JavaScript API** used to **make HTTP requests** (GET, POST, PUT, DELETE, etc.) to servers and fetch resources such as **JSON, text, or files**.
@@ -865,7 +865,7 @@ How Fetch works:
 - The parsed JSON is then used in `.then()` or `await`
 
 ----
-### 27. What is an API and different rest methods we use?
+### 29. What is an API and different rest methods we use?
 Answer:
 
 ###### API
@@ -918,7 +918,7 @@ DELETE (Delete)
 - **Example:** `DELETE /users/1` (Delete User 1).
 
 ---
-### 28. Can you explain the difference between a REST and SOAP API?
+### 30. Can you explain the difference between a REST and SOAP API?
 Answer:
 
 **REST (Representational State Transfer):** It is an **architectural style**. It is lightweight, flexible, and easy to use. and this uses standard HTTP methods.
@@ -947,7 +947,7 @@ When to use SOAP
 - Transaction-heavy systems
 - When strict contracts are required
 ---
-### 29. What are REST APIs and why are they so popular?
+### 31. What are REST APIs and why are they so popular?
 Answer:
 
 REST stands for Representational State Transfer.
