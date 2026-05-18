@@ -11,6 +11,9 @@ Old Redux Problem:
 - Reducer file
 - Types file
 - Store setup
+
+[[Redux Learning RoadMap]]
+
 ---
 ### Why Redux instead of Hooks? How Redux Solve it?
 Hooks can manage the state but the key difference is **scale and structure.**
@@ -122,6 +125,9 @@ store.dispatch({ type: "INCREMENT" });
 
 ---
 
+[[Redux Toolkit (Global storage of Data)- Self]]  - Self Written 
+
+---
 ### How to use Redux in Components using Counter Example
 
 Order to always remember:

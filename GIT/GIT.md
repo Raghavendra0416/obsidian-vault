@@ -1,4 +1,4 @@
-### Important Points:
+	### Important Points:
 - All Git related commands start with the `git` keyword.
 - All the folders are called as repositories in the GIT.
 - [History of GIT](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
