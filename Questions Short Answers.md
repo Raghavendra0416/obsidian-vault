@@ -148,8 +148,8 @@ Model manages data and database operations and also represents the application's
 the main responsibility of model is:
 - Interact with the database
 - Create, Read, Update, Delete (CRUD) operations
-- Define data structure/schema
-- Validate data
+- Define schema
+- Validate data 
 
 View:
 View handles the user interface (UI) for displaying data to the user. 
@@ -169,6 +169,74 @@ The main responsibility of the controller is to:
 This separation improves code organization, maintainability, scalability, and testability.
 
 ---
+### What is middleware?
+Ans:
+**Middleware** is a function that executes between the **request** and the **response** cycle in an Express application.
+It has access to:
+- `req` (Request object)
+- `res` (Response object)
+- `next()` function
 
+After performing its task, it either sends a response or calls `next()` to pass control to the next middleware or route handler.
 
+Middleware is used for tasks such as authentication, authorization, validation, logging, parsing request bodies, and error handling and also helps in avoid repeating code.
+
+Types of Middleware:
+- Application-Level Middleware -> Applied to the entire application.
+- Route-Level Middleware -> Applied to specific routes.
+- Built-in Middleware -> Express provides built-in middleware.
+- Third-Party Middleware -> Installed through `npm`.
+- Error-Handling Middleware -> Used to catch application errors.
+
+---
+### Explain what CORS is in ExpressJS?
+Ans:
+CORS stands for **Cross-Origin Resource Sharing** and it is a browser security mechanism that allows or restricts a web application from making requests to a different origin (domain, protocol, or port).
+
+and CORS is used to control how to access the resources on a server from another origin.
+
+Browsers follow the **Same-Origin Policy (SOP)**. This policy allows a web page to make requests only to the same origin from which it was loaded.
+
+An origin consists of:
+```
+Protocol + Domain + Port
+```
+
+Any change in protocol, domain, or port creates a new origin.
+
+When a browser sends a cross-origin request, it checks the response headers from the server. If the server responds with:
+```
+Access-Control-Allow-Origin: http://localhost:3000
+```
+the browser allows the request.
+Otherwise, it blocks access to the response.
+
+CORS in Express.js can be installed using `npm`. 
+
+---
+### What are Cookies and how are they used?
+Ans:
+Cookies are small pieces of data stored in the browser and sent back automatically with every request to the same server.
+
+HTTP is a **stateless protocol**, which means the server does not remember previous requests. 
+But Cookies can be used to maintain state in HTTP.
+
+Cookies are small in size i.e ~4KB and Can expire automatically.
+
+Cookies are commonly used for session management, authentication, remembering user preferences, and tracking user activity
+
+In Express.js, cookies can be created using `res.cookie()`, read using `req.cookies`, and managed with middleware such as `cookie-parser`.
+
+For security, cookies are often configured with options like `httpOnly`,`secure`, `maxAge` and `sameSite` because they are vulnerable to XSS(Cross-Site Scripting) & CSRF (Cross-Site Request Forgery).
+
+- `httpOnly` - Prevents JavaScript access to the cookie
+- `secure` - Sends cookie only over HTTPS
+- `maxAge` - Cookie expiration time
+- `sameSite` - Helps prevent CSRF attacks.
+
+Types of Cookies:
+- Session Cookies -> Temporary, Deleted when browser closes.
+- Persistent Cookies -> Stored for a specified duration, Remain after browser restart.
+
+---
 
