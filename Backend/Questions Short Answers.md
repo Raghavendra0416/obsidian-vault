@@ -239,4 +239,86 @@ Types of Cookies:
 - Persistent Cookies -> Stored for a specified duration, Remain after browser restart.
 
 ---
+### What is JWT?
+Ans:
+JWT stands for **JSON Web Token** and it is a compact, secure, and self-contained token used for **authentication** and **authorization** between a client and a server.
+
+It allows the server to verify a user's identity without storing session data on the server.
+
+JWT is commonly used in:
+- REST APIs
+- MERN Stack applications
+- Microservices
+
+After a user logs in successfully, the server needs a way to identify that user in future requests.
+JWT solves this problem by generating a token and sending it to the client.
+The client sends the token with every request, and the server verifies its signature to authenticate the user.
+
+A JWT consists of three parts:
+- Header -> Contains information about the token.
+- Payload -> Contains user information (claims).
+- Signature -> Used to verify that the token has not been tampered with.
+
+Because JWT is stateless and does not require server-side session storage.
+
+---
+### Explain the working of passport.js?
+Ans:
+Passport.js is an authentication middleware for Node and Express.js applications. 
+It provides a flexible framework for implementing authentication using different strategies such as Local Authentication, JWT, Google OAuth, and GitHub OAuth.
+
+Without Passport.js, we have to manually handle:
+- Login logic
+- Password verification
+- Session management
+- OAuth integrations
+- Authentication middleware
+Passport provides a standardized way to handle all these tasks.
+
+Main Components of Passport.js:
+- Passport Middleware -> Initializes Passport in Express.
+- Strategy -> A strategy defines **how authentication should happen**.
+- Verify Callback -> Passport calls a verification function to validate the user.
+
+Passport automatically:
+- Reads credentials
+- Executes strategy
+- Authenticates user
+
+Passport provides Faster implementation, Less boilerplate, Built-in strategies, OAuth support and Reusable middleware.
+
+and this is widely used in Express applications.
+
+---
+### What is hashing? Explain the relevance of it
+Ans:
+**Hashing** is the process of converting data into a fixed-length, unreadable string called a **hash value** using a mathematical algorithm called a **hash function**.
+
+In web applications, Instead of storing the actual password as plain text, we use hashing on passwords and securely store them.
+
+During login, the entered password is hashed and compared with the stored hash. 
+Since hashing is a one-way process, the original password cannot be retrieved from the hash.
+
+Libraries like `bcrypt` are commonly used because they provide **salting** and secure password hashing, helping protect against attacks such as rainbow table attacks and database breaches.
+
+Hashing is One-way process and once hashing is performed, data cannot be decrypted.
+
+Hashing is essential because:
+- Protects user passwords
+- Prevents plain-text storage
+- Reduces impact of database breaches
+- Meets security best practices
+- Required in most authentication systems
+
+Used in:
+- Login systems
+- Banking applications
+- E-commerce platforms
+- Social media platforms
+- Enterprise applications
+
+---
+
+
+
 
